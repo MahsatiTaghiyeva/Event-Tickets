@@ -1,12 +1,16 @@
+namespace EventManagement.Models;
+
 public class Event
 {
-    public int Id {get; set;}
-    public string Name {get; set;} = null!;
-    public DateTime EventDate {get; set;}
-    public decimal TicketPrice {get; set;}
-    public List<Ticket> Tickets = new List<Ticket>();
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public DateTime EventDate { get; set; }
+    public decimal TicketPrice { get; set; }
+
+    public List<Ticket> Tickets { get; set; } = new();
+
     public override string ToString()
     {
-        return $"Id: {Id}, Name: {Name}, Date: {EventDate}, Price: {TicketPrice}";
+        return $"ID: {Id} | Name: {Name} | Date: {EventDate:dd.MM.yyyy HH:mm} | Price: {TicketPrice}";
     }
 }
